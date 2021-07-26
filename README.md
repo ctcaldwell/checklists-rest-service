@@ -10,6 +10,8 @@ A checklist can be instanced multiple times.
 ### **Prerequisites**
 Java 8
 
+Gradle
+
 ### **Running**
 `./gradlew bootRun
 `
