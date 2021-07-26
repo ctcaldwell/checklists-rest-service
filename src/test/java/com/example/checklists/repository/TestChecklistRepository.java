@@ -1,4 +1,4 @@
-package com.example.checklists.repositories;
+package com.example.checklists.repository;
 
 import com.example.checklists.domain.Checklist;
 import org.junit.jupiter.api.AfterAll;

@@ -1,15 +1,14 @@
 package com.example.checklists.controller;
 
-import com.example.checklists.domain.Checklist;
 import com.example.checklists.domain.Task;
-import com.example.checklists.repositories.ChecklistRepository;
-import com.example.checklists.repositories.TaskRepository;
+import com.example.checklists.repository.ChecklistRepository;
+import com.example.checklists.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-import org.springframework.web.context.request.WebRequest;
+
 import java.util.Optional;
 
 @RestController

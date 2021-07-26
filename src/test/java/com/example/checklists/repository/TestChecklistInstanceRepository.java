@@ -1,15 +1,13 @@
-package com.example.checklists.repositories;
+package com.example.checklists.repository;
 
 import com.example.checklists.domain.Checklist;
 import com.example.checklists.domain.ChecklistInstance;
-import com.example.checklists.domain.Task;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.Collection;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -111,7 +109,6 @@ public class TestChecklistInstanceRepository {
     }
 
     @Test
-    @Disabled
     void testFindByChecklistDoesNotFindItemsNotAdded() {
         Iterable<ChecklistInstance> instances = checklistInstanceRepository.findByChecklist(persistedChecklist1);
 

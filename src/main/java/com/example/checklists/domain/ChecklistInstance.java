@@ -3,6 +3,7 @@ package com.example.checklists.domain;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.domain.Auditable;
 
 import javax.persistence.*;
 
@@ -20,8 +21,7 @@ public class ChecklistInstance {
     @Getter
     private Long id;
 
-    @CreatedDate
-    @Temporal(TIMESTAMP)
+    @Column
     @Getter
     private Date createdDate;
 

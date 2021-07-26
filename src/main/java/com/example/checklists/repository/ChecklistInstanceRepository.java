@@ -1,8 +1,7 @@
-package com.example.checklists.repositories;
+package com.example.checklists.repository;
 
 import com.example.checklists.domain.Checklist;
 import com.example.checklists.domain.ChecklistInstance;
-import com.example.checklists.domain.Task;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,8 @@
 package com.example.checklists.controller;
 
-import com.example.checklists.domain.Checklist;
 import com.example.checklists.domain.ChecklistInstance;
-import com.example.checklists.repositories.ChecklistInstanceRepository;
-import com.example.checklists.repositories.ChecklistRepository;
+import com.example.checklists.repository.ChecklistInstanceRepository;
+import com.example.checklists.repository.ChecklistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
