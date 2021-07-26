@@ -1,9 +1,11 @@
 package com.example.checklists.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -20,10 +22,16 @@ public class Task {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name="checklist_id")
+    @JoinColumn(name="checklist_id", referencedColumnName = "id")
     @Getter
     @Setter
     private Checklist checklist;
+
+    @OneToMany(mappedBy = "task")
+    @Getter
+    @Setter
+    @JsonIgnore
+    private List<TaskInstance> taskInstanceList;
 
     public Task() {
     }

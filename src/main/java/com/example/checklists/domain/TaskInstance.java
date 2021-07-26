@@ -21,13 +21,13 @@ public class TaskInstance {
     private Date createdDate;
 
     @ManyToOne
-    @JoinColumn(name="task_id")
+    @JoinColumn(name="task_id", referencedColumnName = "id")
     @Getter
     @Setter
     private Task task;
 
     @ManyToOne
-    @JoinColumn(name="checklist_instance_id")
+    @JoinColumn(name="checklist_instance_id", referencedColumnName = "id")
     @Getter
     @Setter
     private ChecklistInstance checklistInstance;
