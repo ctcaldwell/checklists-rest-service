@@ -18,17 +18,41 @@ Gradle
 ### **Run Tests**
 `./gradlew test`
 
-### **Endpoint Examples (using Curl or Postman)**
+### **Endpoint Examples**
 
-`POST http://localhost:8080/checklists/`
+Create a checklist
 
-```Body { "name": "Checklist 1" }```
+`curl --header "Content-Type: application/json" --request POST --data '{"name":"List 1"}' http://localhost:8080/checklists `
 
-`POST http://localhost:8080/checklists/1/tasks`
+Add a task to a checklist
 
-```Body { "description": "First Task" }```
+`curl --header "Content-Type: application/json" --request POST --data '{"description":"Do the first thing"}' http://localhost:8080/checklists/1/tasks`
 
-`POST http://localhost:8080/checklists/1/instances`
+Create an instance of a checklist
+
+`curl --header "Content-Type: application/json" --request POST http://localhost:8080/checklists/1/instances`
+
+Get checklists
+
+`curl http://localhost:8080/checklists`
+
+Get tasks associated to checklist definition
+
+`curl http://localhost:8080/checklists/1/tasks`
+
+Get a specific instance of a checklist
+
+`curl http://localhost:8080/checklists/1/instances/1`
+
+Get task instance state (will be folded into the above as develop continues)
+
+`curl http://localhost:8080/checklists/1/instances/1/taskInstances`
 
 
+### **Next Steps**
+Mapping layer between domain entities and JSON responses
+
+Dockerization of service
+
+Users and Spring Security/Authorization
 
