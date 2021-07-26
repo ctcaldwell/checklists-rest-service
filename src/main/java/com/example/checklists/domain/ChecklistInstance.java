@@ -23,6 +23,7 @@ public class ChecklistInstance {
 
     @Column
     @Getter
+    @Setter
     private Date createdDate;
 
     @ManyToOne

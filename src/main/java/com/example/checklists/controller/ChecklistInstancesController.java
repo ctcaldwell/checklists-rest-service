@@ -10,6 +10,7 @@ import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Optional;
+import java.util.Date;
 
 @RestController
 public class ChecklistInstancesController {
@@ -28,6 +29,7 @@ public class ChecklistInstancesController {
         ChecklistInstance newInstance = new ChecklistInstance();
         ChecklistInstance persistedInstance = checklistRepository.findById(checklistId).map(checklist -> {
             newInstance.setChecklist(checklist);
+            newInstance.setCreatedDate(new Date());
             return checklistInstanceRepository.save(newInstance);
         }).orElseThrow(() -> new ChecklistNotFoundException("ChecklistId " + checklistId + "not found"));
 
