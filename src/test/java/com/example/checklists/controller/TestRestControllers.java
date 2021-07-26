@@ -12,7 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestChecklistsRestController {
+public class TestRestControllers {
 
     @Autowired
     private MockMvc mockMvc;
@@ -21,6 +21,15 @@ public class TestChecklistsRestController {
     void testRespondsToExpectedRoutes() throws Exception {
         mockMvc.perform(post("/checklists")
                 .content("\"name\":\"Test List 1\"")
+                .contentType("application/json"))
+                .andExpect(status().isCreated());
+
+        mockMvc.perform(post("/checklists/1/tasks")
+                .content("\"description\":\"Test Task 1\"")
+                .contentType("application/json"))
+                .andExpect(status().isCreated());
+
+        mockMvc.perform(post("/checklists/1/instances")
                 .contentType("application/json"))
                 .andExpect(status().isCreated());
     }
